@@ -15,7 +15,8 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => 'Add Component',
                 'layouts' => [
-                    //Components\SliderImages\getACFLayout(),
+                    Components\GridHighlights\getACFLayout(),
+                    Components\FormEmail\getACFLayout()
                 ]
             ]
         ],
