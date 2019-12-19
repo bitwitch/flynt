@@ -4,16 +4,9 @@
 * Top level styles every element should inherit.
 */
 
-@include font-face('Montserrat', 'montserrat-v14-latin-regular', '400', 'normal');
-@include font-face('Montserrat', 'montserrat-v14-latin-italic', '400', 'italic');
-@include font-face('Montserrat', 'montserrat-v14-latin-700', '700', 'normal');
-@include font-face('Montserrat', 'montserrat-v14-latin-700italic', '700', 'italic');
-
 html {
   background-color: $color-background;
   box-sizing: border-box;
-  color: $color-text;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   line-height: 1.625;
@@ -28,8 +21,17 @@ html {
   }
 }
 
-body {
+html body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: $color-text;
+  background-color: #DDD;
   overflow-x: hidden;
+}
+
+.pageWrapper {
+  max-width: $max-page-width;
+  margin: 0 auto;
+  background-color: #FFF;
 }
 
 /**
@@ -489,7 +491,6 @@ select {
   &:hover,
   &:focus {
     border-color: $color-border;
-    outline: 0;
   }
 
   + label {
@@ -499,9 +500,9 @@ select {
     width: 100%;
 
     &::before {
-      background-color: #fff;
+      background-color: transparent;
       border: 1px solid $color-border;
-      border-radius: 2px;
+      border-radius: 50%;
       content: '';
       display: block;
       height: 15px;
@@ -509,7 +510,7 @@ select {
       margin: 0;
       padding: 0;
       position: absolute;
-      top: 4px;
+      top: 2px;
       transition: border-color 0.2s ease, background-color 0.2s ease;
       width: 15px;
     }
@@ -517,9 +518,9 @@ select {
 
   &:checked {
     + label::before {
-      background-color: $color-accent;
-      border-color: $color-accent;
-      box-shadow: inset 0 0 0 2px #fff;
+      background-color: #000;
+      border-color: #000;
+      box-shadow: inset 0 0 0 2px #FFF;
     }
   }
 }

@@ -1,0 +1,27 @@
+.footer-social {
+  color: #FFF;
+  h1,h2,h3,h4,h5,h6 { color: #FFF; }
+}
+
+.footer-social .footer-body { background-color: #242424;  }
+
+.footer-social .circle {
+  display: block;
+  border-radius: 50%;
+  background-color: #FFF;
+  width: 35px;
+  height: 35px;
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.footer-social hr {
+  background-color: #D8D8D8;
+}
+
+.footer-social .footer-bar { 
+  background-color: #000;
+  padding: 1rem 0;
+  a, a:hover { color: #FFF; }
+}
+

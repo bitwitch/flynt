@@ -1,0 +1,52 @@
+<div class="footer-social">
+  <div class="footer-body py-5">
+    <div class="container">
+      <nav class="navigation">
+        
+        <div class="text-center">
+          <h3>{{ heading }}</h3>
+          <p>{{ subheading }}</p>
+        </div>      
+
+        <ul class="menu list-unstyled d-flex justify-content-center">
+          {% for item in menu.get_items %}
+          <li class="{{ item.classes | join(' ') }}">
+            <a class="menu-link circle" 
+               href="{{ item.link }}"
+               {% if item.target %}target="{{ item.target }}"{% endif %}>
+
+              {% if item.social_icon %}
+                <img src="{{ item.social_icon.src }}" />
+              {% endif %}
+
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <hr>
+        
+        <div class="text-center">
+          <small>{{ disclaimer }}</small>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-center text-md-left">{{ copyright }}</div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+          {% for link in legal_links %}
+          <a href="{{ link.url }}">{{ link.label }}</a>
+            {{ loop.last == false ? '&nbsp;|&nbsp;' }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

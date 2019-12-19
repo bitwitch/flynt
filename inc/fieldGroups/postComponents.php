@@ -15,12 +15,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => 'Add Component',
                 'layouts' => [
-                    Components\BlockCollapse\getACFLayout(),
-                    Components\BlockImage\getACFLayout(),
-                    Components\BlockImageText\getACFLayout(),
-                    Components\BlockVideoOembed\getACFLayout(),
-                    Components\BlockWysiwyg\getACFLayout(),
-                    Components\SliderImages\getACFLayout(),
+                    //Components\SliderImages\getACFLayout(),
                 ],
             ],
         ],
