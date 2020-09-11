@@ -6,6 +6,9 @@
  */
 namespace Flynt\TimberLoader;
 
+use Pixel\TwigExtensionImageQuality;
+use Pixel\TwigExtensionAutoplayLoop;
+
 use Flynt\Utils\TwigExtensionFlynt;
 use Flynt;
 use Timber\Image;
@@ -28,6 +31,8 @@ add_filter('acf/format_value/type=post_object', NS . 'formatPostObject', 100);
 add_filter('acf/format_value/type=relationship', NS . 'formatPostObject', 100);
 add_filter('get_twig', function ($twig) {
     $twig->addExtension(new TwigExtensionFlynt());
+    $twig->addExtension(new TwigExtensionImageQuality());
+    $twig->addExtension(new TwigExtensionAutoplayLoop());
     return $twig;
 });
 
