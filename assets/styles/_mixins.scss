@@ -186,6 +186,7 @@
 
   .gform_confirmation_message {
     color: #B6D12A;
+    margin-top: 15px;
   }
 
   .gform_ajax_spinner {
@@ -225,5 +226,102 @@
       padding-left: 15px;
     }
   }
+}
+
+@mixin custom-hubspot-form {
+  form { position: relative; }
+  .hs-email label { display: none; }
+  .hs-error-msgs label { display: inline-block; }
+
+  .hs-error-msgs { color: $error; }
+
+  input[type=email] {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #FFF;
+    background-color: transparent;
+    margin-bottom: 25px;
+    @include media-breakpoint-up(md) { width: 50%; }
+
+    &::placeholder { 
+      text-align: center; 
+      letter-spacing: 0.03em;
+      font-weight: 100;
+      @include media-breakpoint-up(md) { font-size: 18px; }
+    }
+  }
+
+  input[type=submit] {
+    background: radial-gradient(100% 1459.24% at 0% 50%, #7ECAD1 0%, #455B77 100%), #7ECAD1;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: none;
+    color: $color-button;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    outline: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    user-select: none;
+    font-size: 1.5625rem;
+    width: 100%;
+    padding: 14px 20px 17px;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      font-size: 1rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.5625rem;
+    }
+
+    &:disabled,
+    &--disabled {
+      cursor: default;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-button-bg-dark;
+      border-color: $color-button-bg-dark;
+      color: $color-button;
+      text-decoration: none;
+    }
+  }
+
+  .inputs-list { padding-left: 0; }
+
+  .hs-form-booleancheckbox {
+    display: block;
+    text-align: center;
+  }
+
+  .hs-form-booleancheckbox input[type=checkbox] {
+    opacity: 1;
+    width: auto;
+    pointer-events: all;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+
+  .hs-form-booleancheckbox label {
+    font-weight: 100;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    a { color: inherit; }
+    strong { font-weight: bold; }
+  }
+
 }
 

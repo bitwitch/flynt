@@ -15,6 +15,8 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => 'Add Component',
                 'layouts' => [
+                    Components\LayoutSinglePage\getACFLayout(),
+                    Components\HeroCta\getACFLayout(),
                     Components\GridHighlights\getACFLayout(),
                     Components\FormEmail\getACFLayout()
                 ]
