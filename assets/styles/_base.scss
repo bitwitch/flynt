@@ -24,7 +24,7 @@ html {
 html body {
   font-family: Helvetica, Arial, sans-serif;
   color: $color-text;
-  background-color: #DDD;
+  background-color: $gutter-color;
   overflow-x: hidden;
 }
 
