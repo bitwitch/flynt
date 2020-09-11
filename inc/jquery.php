@@ -17,13 +17,14 @@ add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('jquery');
 
     $jqueryLocalUrl = esc_url(includes_url("/js/jquery/jquery.js?ver=${jqueryVersion}"));
-    Asset::register([
+    Asset::enqueue([
         'name' => 'jquery',
         'cdn' => [
             'url' => "//ajax.googleapis.com/ajax/libs/jquery/${jqueryVersion}/jquery.min.js",
             'check' => 'window.jQuery'
         ],
         'type' => 'script',
-        'path' => $jqueryLocalUrl
+        'path' => $jqueryLocalUrl,
+        'inFooter' => false
     ]);
 }, 0); // NOTE: prio needs to be < 1
